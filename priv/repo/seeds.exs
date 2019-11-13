@@ -11,7 +11,6 @@
 # and so on) as they will fail if something goes wrong.
 
 defmodule TheScoreWeb.DevelopmentSeeder do
-  alias TheScore.Repo
   alias TheScore.Rushings
 
   def insert_data do

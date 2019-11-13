@@ -1,0 +1,10 @@
+<%= form_for @conn, Routes.score_path(@conn, :filter), [as: :filter], fn f -> %>
+    <div>
+        <%= text_input f, :name, placeholder: "Please type name to search" %>
+        <%= error_tag f, :name %>
+    </div>
+
+    <%= submit "Filter" %>
+
+      <input name="_method" type="hidden" value="post">
+<% end %>

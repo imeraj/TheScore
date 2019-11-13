@@ -11,4 +11,15 @@ defmodule TheScoreWeb.ScoreController do
       page: page
     )
   end
+
+  def filter(conn, %{
+        "filter" => %{"name" => name}
+      }) do
+    page = Rushings.filter_rushings(String.trim(name))
+
+    render(conn, "index.html",
+      rushings: page.entries,
+      page: page
+    )
+  end
 end

@@ -1,4 +1,5 @@
 <h1 align="center">All Rushings</h1>
+<%= render "form.html", Map.put(assigns, :action, Routes.score_path(@conn, :filter)) %>
 
 <table id="t01">
   <tr>

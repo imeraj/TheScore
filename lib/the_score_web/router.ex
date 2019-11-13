@@ -17,6 +17,7 @@ defmodule TheScoreWeb.Router do
     pipe_through(:browser)
 
     get("/", ScoreController, :index)
+    post("/filter", ScoreController, :filter)
   end
 
   # Other scopes may use custom stacks.

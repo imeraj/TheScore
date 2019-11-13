@@ -1,4 +1,6 @@
 defmodule TheScore.Rushings do
+  import Ecto.Query
+
   alias TheScore.Rushing
   alias TheScore.Repo
 
@@ -13,5 +15,12 @@ defmodule TheScore.Rushings do
   def list_rushings(params) do
     Rushing
     |> Repo.paginate(params)
+  end
+
+  @doc false
+  def filter_rushings(filter) do
+    Rushing
+    |> where(name: ^filter)
+    |> Repo.paginate(nil)
   end
 end
