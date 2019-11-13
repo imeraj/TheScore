@@ -8,4 +8,10 @@ defmodule TheScore.Rushings do
     |> Rushing.changeset(attrs)
     |> Repo.insert()
   end
+
+  @doc false
+  def list_rushings(params) do
+    Rushing
+    |> Repo.paginate(params)
+  end
 end
