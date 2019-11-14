@@ -1,7 +1,8 @@
 <h1 align="center">All Rushings</h1>
 <%= render "form.html", Map.put(assigns, :action, Routes.score_path(@conn, :filter)) %>
+<%= render "sort_form.html", Map.put(assigns, :action, Routes.score_path(@conn, :sort)) %>
 
-<table id="t01">
+<table>
   <tr>
     <th>Player</th>
     <th>Team</th>
@@ -40,11 +41,3 @@
   <% end  %>
 </table>
 
-<center>
-[
-<%= for {_,i} <- Enum.with_index(1..@page.total_pages) do %>
-  <%= link i+1, to: Routes.score_path(@conn, :index, page: i + 1) %>
-<% end %>
-</div>
-]
-</center>

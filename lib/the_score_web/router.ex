@@ -18,6 +18,7 @@ defmodule TheScoreWeb.Router do
 
     get("/", ScoreController, :index)
     post("/filter", ScoreController, :filter)
+    post("/sort", ScoreController, :sort)
   end
 
   # Other scopes may use custom stacks.
