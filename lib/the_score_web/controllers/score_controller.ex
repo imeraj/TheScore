@@ -18,6 +18,7 @@ defmodule TheScoreWeb.ScoreController do
   end
 
   def sort(conn, %{"sort" => %{"sort_criteria" => criteria_id}}) do
+    :ets.insert(:cache, {"sort_criteria", criteria_id})
     data = Rushings.sort_rushings(criteria_id)
 
     render(conn, "index.html", rushings: data)

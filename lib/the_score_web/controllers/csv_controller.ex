@@ -27,6 +27,12 @@ defmodule TheScoreWeb.CsvController do
   end
 
   defp csv_content do
+    criteria =
+      case :ets.lookup(:cache, "sort_criteria") do
+        [{_, criteria}] -> criteria
+        [] -> ""
+      end
+
     [
       [
         "name",
@@ -47,8 +53,8 @@ defmodule TheScoreWeb.CsvController do
       ]
     ]
     |> Stream.concat(
-      Rushings.sort_rushings("1")
-      |> Stream.map(&parse_line/1)
+      Rushings.sort_rushings(criteria)
+      |> Enum.map(&parse_line/1)
     )
     |> CSV.encode()
     |> Enum.to_list()

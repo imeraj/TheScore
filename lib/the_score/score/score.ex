@@ -37,7 +37,7 @@ defmodule TheScore.Rushings do
         Repo.all(from(r in Rushing, order_by: ^:rush_td))
 
       _ ->
-        []
+        Repo.all(from(r in Rushing))
     end
   end
 end
