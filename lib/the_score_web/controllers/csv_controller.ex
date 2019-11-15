@@ -54,7 +54,7 @@ defmodule TheScoreWeb.CsvController do
     ]
     |> Stream.concat(
       Rushings.sort_rushings(criteria)
-      |> Enum.map(&parse_line/1)
+      |> Stream.map(&parse_line/1)
     )
     |> CSV.encode()
     |> Enum.to_list()
