@@ -12,16 +12,17 @@ defmodule TheScore.Rushings do
   end
 
   @doc false
-  def list_rushings() do
+
+  def list_rushings(params) do
     Rushing
-    |> Repo.all()
+    |> Repo.paginate(params)
   end
 
   @doc false
-  def filter_rushings(filter) do
+  def filter_rushings(filter, params) do
     Rushing
     |> where(name: ^filter)
-    |> Repo.paginate(nil)
+    |> Repo.paginate(params)
   end
 
   @doc false

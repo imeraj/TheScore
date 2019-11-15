@@ -1,10 +1,6 @@
+<h1 align="center">Sorted Rushings</h1>
 
-<h1 align="center">All Rushings (Page: <%= @page.page_number %>) </h1>
-
-<%= render "form.html", Map.put(assigns, :action, Routes.score_path(@conn, :filter)) %>
-<%= render "sort_form.html", Map.put(assigns, :action, Routes.score_path(@conn, :sort)) %>
-
-
+<%= link "Download CSV", to: Routes.csv_path(@conn, :export) %>
 
 <table>
   <tr>
@@ -44,13 +40,3 @@
     </tr>
   <% end  %>
 </table>
-
-<center>
-(Page: <%= @page.page_number %>) <br>
-[
-<%= for {_,i} <- Enum.with_index(1..@page.total_pages) do %>
-  <%= link i+1, to: Routes.score_path(@conn, :index, page: i + 1) %>
-<% end %>
-</div>
-]
-</center>

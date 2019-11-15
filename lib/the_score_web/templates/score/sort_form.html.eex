@@ -7,5 +7,5 @@
 
 <%= submit "Sort" %>
 <input name="_method" type="hidden" value="post"/>
-<%= link "Download CSV", to: Routes.csv_path(@conn, :export) %>
+
 <% end %>
