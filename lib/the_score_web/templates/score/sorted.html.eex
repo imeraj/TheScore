@@ -22,9 +22,7 @@
     <th>FUM</th>
   </tr>
   <%= for rushing <- @rushings do %>
-    <tr>
-     <td><%= rushing.name %></td><td><%= rushing.team  %></td><td><%= rushing.pos %></td><td><%= rushing.att_per_game %></td><td><%= rushing.att %></td><td><%= rushing.total_rush %></td><td><%= rushing.rush_per_yard %></td><td><%= rushing.rush_per_game %></td><td><%= rushing.rush_td %></td><td><%= rushing.long_rush %></td><td><%= rushing.rush_1st_down %></td><td><%= rushing.rush_1st_down_per %></td><td><%= rushing.rush_20_yards %></td><td><%= rushing.rush_40_yards %></td><td><%= rushing.fumble %></td>
-    </tr>
+    <tr><td><%= rushing.name %></td><td><%= rushing.team  %></td><td><%= rushing.pos %></td><td><%= rushing.att_per_game %></td><td><%= rushing.att %></td><td><%= rushing.total_rush %></td><td><%= rushing.rush_per_yard %></td><td><%= rushing.rush_per_game %></td><td><%= rushing.rush_td %></td><td><%= rushing.long_rush %></td><td><%= rushing.rush_1st_down %></td><td><%= rushing.rush_1st_down_per %></td><td><%= rushing.rush_20_yards %></td><td><%= rushing.rush_40_yards %></td><td><%= rushing.fumble %></td></tr>
   <% end  %>
 </table>
 </table>
