@@ -50,4 +50,6 @@ We will evaluate you on your ability to solve the problem defined in the require
 If you have any questions regarding requirements, do not hesitate to email your contact at theScore for clarification.
 
 ### Installation and running this solution
-... TODO
+1. mix deps.get
+2. mix ecto.reset
+3. mix phx.server
