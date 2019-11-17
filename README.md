@@ -53,3 +53,5 @@ If you have any questions regarding requirements, do not hesitate to email your 
 1. mix deps.get
 2. mix ecto.reset
 3. mix phx.server
+
+Please note: mysql server must be running at default port.
